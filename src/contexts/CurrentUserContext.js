@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { axiosReq, axiosRes } from '../api/axiosDefaults';
-import { response } from 'msw';
-import { useHistory } from 'react-router;
+import { useHistory } from 'react-router';
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -57,7 +56,7 @@ export const CurrentUserProvider = ({ children }) => {
                 } catch(err){
                     setCurrentUser((prevCurrentUser) => {
                         if (prevCurrentUser){
-                            history.pushState('/signin');
+                            history.push('/signin');
                         }
                         return null
                     });
