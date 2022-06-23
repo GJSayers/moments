@@ -83,11 +83,12 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && (
+            {/* removed postPage && below as was stopping the dropdown - despiste being on postPage */}
+            {is_owner && (
               <MoreDropdown
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
-              />
+                />
             )}
           </div>
         </Media>
